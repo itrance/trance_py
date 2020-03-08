@@ -40,7 +40,7 @@ def parse():
         MAIN_URL_WALL = MAIN_URL_WALL_1 + str(start_page)
         html = get_html(MAIN_URL_WALL)
         if html.status_code == 200:
-            print(f'Downloading from {start_page} page')
+            print(f'Downloading from {start_page} page...')
             get_content(html.text)
             start_page += 1
         else:
