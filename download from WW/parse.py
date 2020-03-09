@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-
 MAIN_URL_WALL_1 = 'http://wallpaperswide.com/page/'
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0',
            'Accept': '*/*'}
@@ -23,7 +22,7 @@ def get_content(html):
         pictures.append(
             'http://wallpaperswide.com/download' + with_dot_html[:len(with_dot_html) - 16] + '-3840x2160.html')
     for aaa in pictures:
-        if requests.get(aaa).status_code == 200 :
+        if requests.get(aaa).status_code == 200:
             name_of_pict = aaa[35:len(aaa) - 5]
             image_to_download = requests.get(aaa, stream=True)
             fi = open(name_of_pict + '.jpg', 'wb')
